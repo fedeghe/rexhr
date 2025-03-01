@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js"></script>
+</head>
+<body>
+    
+    <script>
+      
+    joe.getJson({
+        url :'http://127.0.0.1:3001/save',
+        onCompleted: function(r){
+            console.log('json: ', r.response)
+        }
+    });   
+    joe.getXML({
+        url :'http://127.0.0.1:3001/savexml',
+        // url :'https://jmvc.org/media/documentation.xml',
+        onCompleted: function(r){
+            console.log('xml:', r.responseXML)
+        }
+    });
+    joe.get({
+        url :'http://127.0.0.1:3001/save',
+        onCompleted: function(r){
+            console.log('GET: ', r.response)
+        }
+    });
+    joe.post({
+        url :'http://127.0.0.1:3001/save',
+        body: {
+            name:'federico',
+            surname: 'ghedina'
+        },
+        onCompleted: function(r){
+            console.log('POST: ', r.responseText)
+        }
+    });
+    joe.put({
+        url :'http://127.0.0.1:3001/save',
+        body: {
+            name:'federico',
+            surname: 'ghedina'
+        },
+        onCompleted: function(r){
+            console.log('PUT: ', r.responseText)
+        }
+    });
+    joe.delete({
+        url :'http://127.0.0.1:3001/save',
+        body: {
+            id: 31,
+        },
+        onCompleted: function(r){
+            console.log('DELETE: ', r.responseText)
+        }
+    });
+    joe.patch({
+        url :'http://127.0.0.1:3001/save',
+        body: {
+            name:'federico',
+            surname: 'ghedina'
+        },
+        onCompleted: function(r){
+            console.log('PATCH: ', r.responseText)
+        }
+    });
+    joe.head({
+        url :'http://127.0.0.1:3001/save',
+        // url :'https://jmvc.org/media/documentation.xml',
+        body: {
+            name:'federico',
+            surname: 'ghedina'
+        },
+        onCompleted: function(r){
+            console.log('HEAD: ', r.getResponseHeader("Content-Type"))
+        }
+    });
+
+    joe.getXML({
+        
+        url :'http://127.0.0.1:3001/savexml',
+        // url :'http://jmvc.org/media/documentation.xml',
+        // timeout: 1,
+        body: {
+            name:'federico',
+            surname: 'ghedina'
+        },
+        // onAbort: function(e) {
+        //     console.log('abort', e);
+        // },
+        // onError: function(e) {
+        //     console.log('error', e);
+        // },
+        // onProgress: function(e) {
+        //     console.log('progress: ', e);
+        // },
+        onLoadend: function(r){
+            console.log('loadend: ', r.responseXML)
+        }
+    });
+    
+    </script>
+</body>
+</html>

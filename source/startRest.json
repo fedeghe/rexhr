@@ -1,0 +1,4 @@
+{
+    "source/index.js": ". -plugins=malta-restify[endpoints:'source/restify.json',handlers:'source/handlers.js']",
+    "source/README.md": "."
+}

@@ -1,0 +1,20 @@
+{
+  "name": "rexhr",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "author": "Federico Ghedina <fedeghe@gmail.com>",  
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-dom": "^4.0.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "malta": "^4.1.41",
+    "malta-header-comment": "^1.0.12",
+    "malta-js-uglify": "^1.0.13",
+    "malta-restify": "^1.1.11"
+  },
+  "scripts": {
+    "start": "malta source/startRest.json",
+    "build": "malta source/build.json"
+  }
+}
