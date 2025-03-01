@@ -2,33 +2,33 @@
     "POST": [
         {
             "path": "/save",
-            "handler": "savepost"
+            "handler": "post"
         }
     ],
     "PUT": [
         {
             "path": "/save",
-            "handler": "saveput"
+            "handler": "put"
         }
     ],
     "PATCH": [
         {
             "path": "/save",
-            "handler": "savepatch"
+            "handler": "patch"
         }
     ],
 
     "HEAD": [
         {
             "path": "/save",
-            "handler": "savehead"
+            "handler": "head"
         }
     ],
 
     "DELETE": [
         {
             "path": "/save",
-            "handler": "savedelete"
+            "handler": "del"
         }
     ],
     "GET": [
@@ -39,6 +39,10 @@
         {
             "path": "/savexml",
             "handler": "savexml"
+        },
+        {
+            "path": "/late",
+            "handler": "late"
         }
     ]
 }

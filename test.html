@@ -10,26 +10,26 @@
     
     <script>
       
-    joe.getJson({
+    rexhr.getJson({
         url :'http://127.0.0.1:3001/save',
         onCompleted: function(r){
             console.log('json: ', r.response)
         }
     });   
-    joe.getXML({
-        url :'http://127.0.0.1:3001/savexml',
-        // url :'https://jmvc.org/media/documentation.xml',
+    rexhr.getXML({
+        // url :'http://127.0.0.1:3001/savexml',
+        url :'https://jmvc.org/media/documentation.xml',
         onCompleted: function(r){
             console.log('xml:', r.responseXML)
         }
     });
-    joe.get({
+    rexhr.get({
         url :'http://127.0.0.1:3001/save',
         onCompleted: function(r){
             console.log('GET: ', r.response)
         }
     });
-    joe.post({
+    rexhr.post({
         url :'http://127.0.0.1:3001/save',
         body: {
             name:'federico',
@@ -39,7 +39,7 @@
             console.log('POST: ', r.responseText)
         }
     });
-    joe.put({
+    rexhr.put({
         url :'http://127.0.0.1:3001/save',
         body: {
             name:'federico',
@@ -49,7 +49,7 @@
             console.log('PUT: ', r.responseText)
         }
     });
-    joe.delete({
+    rexhr.delete({
         url :'http://127.0.0.1:3001/save',
         body: {
             id: 31,
@@ -58,7 +58,7 @@
             console.log('DELETE: ', r.responseText)
         }
     });
-    joe.patch({
+    rexhr.patch({
         url :'http://127.0.0.1:3001/save',
         body: {
             name:'federico',
@@ -68,7 +68,7 @@
             console.log('PATCH: ', r.responseText)
         }
     });
-    joe.head({
+    rexhr.head({
         url :'http://127.0.0.1:3001/save',
         // url :'https://jmvc.org/media/documentation.xml',
         body: {
@@ -80,7 +80,7 @@
         }
     });
 
-    joe.getXML({
+    rexhr.getXML({
         
         url :'http://127.0.0.1:3001/savexml',
         // url :'http://jmvc.org/media/documentation.xml',
@@ -100,6 +100,16 @@
         // },
         onLoadend: function(r){
             console.log('loadend: ', r.responseXML)
+        }
+    });
+
+    rexhr.get({
+        url :'http://127.0.0.1:3001/savexmlsdfasdfasd',
+        onError: function(r){
+            console.log('errorzzz: ', r)
+        },
+        onAbort: function() {
+            console.log('abort')
         }
     });
     

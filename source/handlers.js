@@ -1,7 +1,6 @@
 const fs = require('fs')
 
 const savexml = ({ req, res, verb, ep }) => {
-        console.log({verb})
         res.contentType = 'xml';
         res.set({
             'content-type': 'application/xml'
@@ -12,51 +11,51 @@ const savexml = ({ req, res, verb, ep }) => {
         });
     },
     save = ({ req, res, verb, ep }) => {
-        console.log({verb})
         res.send(202, {
             "a":1
         });
     },
-    savepost = ({ req, res, verb, ep }) => {
-        console.log({verb})
+    post = ({ req, res, verb, ep }) => {
         res.send(202, {
             "a":2,
             "who" : req.body.name+'@'+req.body.surname
         });
     },
-    saveput = ({ req, res, verb, ep }) => {
-        console.log({verb})
+    put = ({ req, res, verb, ep }) => {
         res.send(202, {
             ...req.body,
             "who" : req.body.name+'@'+req.body.surname
         });
     },
-    savepatch = ({ req, res, verb, ep }) => {
-        console.log({verb})
+    patch = ({ req, res, verb, ep }) => {
         res.send(202, {
             ...req.body,
             "who" : req.body.name+'@'+req.body.surname
         });
     },
-    savedelete = ({ req, res, verb, ep }) => {
-        console.log({verb})
+    del = ({ req, res, verb, ep }) => {
         res.send(202, {
             response: `deleted ${req.body.id}`
         });
     },
-    savehead = ({ req, res, verb, ep }) => {
-        console.log({verb})
+    head = ({ req, res, verb, ep }) => {
         res.send(200, `what`, {
             'content-type': 'application/xml'
+        });
+    },
+    late = ({ req, res, verb, ep }) => {        
+        res.send(200, {
+            response: `this came late`
         });
     };
 
 module.exports = {
     save,
     savexml,
-    savepost,
-    saveput,
-    savedelete,
-    savepatch,
-    savehead,
+    post,
+    put,
+    del,
+    patch,
+    head,
+    late
 }

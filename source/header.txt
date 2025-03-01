@@ -5,6 +5,9 @@ _______   ____ ___  __|  |_________
  |__|    \___  >__/\_ \___|  /__|   
              \/      \/    \/
 
-maltaV('PACKAGE.author')
-❤️‍🔥 
-__SIZE__
+v. maltaV('PACKAGE.version')  
+
+maltaV('PACKAGE.author')  
+
+__SIZE__ of ❤️‍🔥   
+

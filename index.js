@@ -1,4 +1,4 @@
-var joe = {};
+var rexhr = {};
 
 (function (ctx, _){
 
@@ -14,10 +14,9 @@ var joe = {};
         request = function(params){
             
             var url = params.url,
-                timeout = params.timeout,
+                timeout = params.timeout || 0,
                 user = params.user || null,
                 password = params.password || null,
-                timeout = params.timeout,
                 responseType = params.responseType,
                 contentType = params.contentType,
                 body = params.body || null,
@@ -79,7 +78,7 @@ var joe = {};
     ctx.getJson = function(params){
         return request(override(params, {
             method: 'GET',
-            responseType: 'json'
+            responseType: 'text'
         }));
     };
     ctx.getXML = function(params){
@@ -89,17 +88,18 @@ var joe = {};
             contentType: 'application/xml'
         }));
     };
+    
     ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS', 'TRACE', 'CONNECT'].forEach(
         function (method) {
             ctx[method.toLowerCase()] = function(params){
-                return request(override(params, {
+                return request(override({
                     method: method,
                     responseType: 'text'
-                }));
+                }, params));
             };
         }
     );
 
-})(joe, window);
+})(rexhr, window);
 
-(typeof exports === 'object') && (module.exports = joe);
+(typeof exports === 'object') && (module.exports = rexhr);
