@@ -93,17 +93,17 @@ var rexhr = {};
     };
     
     'GET POST PUT PATCH DELETE HEAD OPTIONS TRACE CONNECT'
-    .split(/\s/)
-    .forEach(
-        function (m) {
-            ctx[m.toLowerCase()] = function(prs){
-                return request(override({
-                    method: m,
-                    responseType: 'text'
-                }, prs));
-            };
-        }
-    );
+        .split(/\s/)
+        .forEach(
+            function (m) {
+                ctx[m.toLowerCase()] = function(prs){
+                    return request(override({
+                        method: m,
+                        responseType: 'text'
+                    }, prs));
+                };
+            }
+        );
 
 })(rexhr, window);
 

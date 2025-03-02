@@ -20,7 +20,8 @@ use it
 var rexhr = require('rexhr')
 
 rexhr.get({
-    url: 'https://jmvc.org'
+    url: 'https://jmvc.org', 
+    // ...
 })
 ```
 
@@ -34,3 +35,4 @@ let it run and start the tests:
 ``` sh
 yarn test
 ```
+

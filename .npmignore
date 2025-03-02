@@ -1,3 +1,6 @@
 node_modules
 source
+coverage
 .coveralls.yml
+test.html
+jest.config.js
