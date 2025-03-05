@@ -6,7 +6,7 @@ _______   ____ ___  __|  |_________
  |  | \/\  ___/ >    <|   Y  \  | \/
  |__|    \___  >__/\_ \___|  /__|   
              \/      \/    \/
-                                v. maltaV('PACKAGE.version')
+                                v. 0.0.1
 </pre>
 
 [![Coverage Status](https://coveralls.io/repos/github/fedeghe/rexhr/badge.svg?branch=master)](https://coveralls.io/github/fedeghe/rexhr?branch=master)
