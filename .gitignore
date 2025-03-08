@@ -1,6 +1,5 @@
 test.html
 node_modules
-dist
 coverage
 .coveralls.yml
 .buildNum.json
