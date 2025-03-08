@@ -6,7 +6,7 @@ _______   ____ ___  __|  |_________
  |  | \/\  ___/ >    <|   Y  \  | \/
  |__|    \___  >__/\_ \___|  /__|   
              \/      \/    \/
-                                v. 0.0.3
+                                v. 0.0.4
 </pre>
 
 [![Coverage Status](https://coveralls.io/repos/github/fedeghe/rexhr/badge.svg?branch=master)](https://coveralls.io/github/fedeghe/rexhr?branch=master)
@@ -17,8 +17,10 @@ Install it
 ```
 
 #### first things first: run the tests
-All tests are meant to run agains a local small server which respond back usual replies needed in the tests. This means that tests are besed ok some hadrcoded values returned by that local server, and that to run the tests we need first to start that responding server:  
+All tests are meant to run agains a local small server which respond back usual replies needed in the tests. This means that tests are based ok some hadrcoded values returned by that local server, and that to run the tests we need first to start it:  
 ``` sh
+// I assume you are in the folder where rexhr was installed
+> cd node_modules/rexhr
 > yarn start 
 ```
 let it run and start the tests: 
@@ -28,6 +30,9 @@ let it run and start the tests:
 thes You can shut down both.
 
 # use it
+
+run `yarn build` to be sure to get the minified version into `dist/index.js`
+
 <details>
 <summary>generic request signature</summary>
 
