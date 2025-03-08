@@ -1,9 +1,13 @@
 {
   "name": "rexhr",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "dist/index.js",
   "author": "Federico Ghedina <fedeghe@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://fedeghe@github.com/fedeghe/rexhr.git"
+  },
   "devDependencies": {
     "coveralls": "^3.1.1",
     "jest": "^29.7.0",
