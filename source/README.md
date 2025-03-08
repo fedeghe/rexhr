@@ -27,7 +27,7 @@ let it run and start the tests:
 ``` sh
 > yarn test
 ``` 
-thes You can shut down both.
+then You can shut down both.
 
 # use it
 

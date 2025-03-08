@@ -6,7 +6,7 @@ _______   ____ ___  __|  |_________
  |  | \/\  ___/ >    <|   Y  \  | \/
  |__|    \___  >__/\_ \___|  /__|   
              \/      \/    \/
-                                v. 0.0.4
+                                v. 0.0.5
 </pre>
 
 [![Coverage Status](https://coveralls.io/repos/github/fedeghe/rexhr/badge.svg?branch=master)](https://coveralls.io/github/fedeghe/rexhr?branch=master)
@@ -27,7 +27,7 @@ let it run and start the tests:
 ``` sh
 > yarn test
 ``` 
-thes You can shut down both.
+then You can shut down both.
 
 # use it
 
