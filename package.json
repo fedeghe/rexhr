@@ -1,6 +1,6 @@
 {
   "name": "rexhr",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "dist/index.js",
   "author": "Federico Ghedina <fedeghe@gmail.com>",
   "license": "MIT",
