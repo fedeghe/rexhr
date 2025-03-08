@@ -1,7 +1,6 @@
 var rexhr = {};
 
 (function (ctx, _){
-
     var noop = function(){},
         override = function (o, els) {
             var ret = Object.assign({}, o);
@@ -13,7 +12,6 @@ var rexhr = {};
             return ret;
         },
         request = function(params){
-            
             var url = params.url,
                 timeout = params.timeout || 0,
                 user = params.user || null,
@@ -34,47 +32,47 @@ var rexhr = {};
                 wc = !!params.withCredentials,
                 xhr = new XMLHttpRequest(),
                 called = false;
-            /* istanbul ignore else */
-            if (xhr) {
-                xhr.responseType = responseType;
-                xhr.withCredentials = wc;
-                xhr.timeout = timeout || null;
-                xhr.addEventListener('load', onLoad);
-                xhr.addEventListener('progress', onProgress);
-                xhr.addEventListener('error', onError);
-                xhr.addEventListener('timeout', onTimeout);
-                xhr.addEventListener('abort', onAbort);
-                xhr.addEventListener('loadend', function(){onLoadend(xhr)});
-                xhr.addEventListener('loadstart', function(){onLoadstart(xhr)});
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState === XMLHttpRequest.DONE) {
-                        var status = xhr.status;
-                        /* istanbul ignore else */
-                        if (status === 0 || (status >= 200 && status < 400)) {
-                            !called && onCompleted(xhr);
-                            called = true;
-                        }
-                        // if (xhr.error){
-                        //     onError(xhr.error);
-                        //     xhr.abort();
-                        // }
-                    }
-                };
-                if(contentType === 'application/xml') {
-                    xhr.overrideMimeType("text/xml");
-                }
-                if (body) {
-                    headers = override(headers, {'X-Requested-With': 'XMLHttpRequest'});
+            
+            xhr.responseType = responseType;
+            xhr.withCredentials = wc;
+            xhr.timeout = timeout || null;
+            xhr.addEventListener('load', onLoad);
+            xhr.addEventListener('progress', onProgress);
+            xhr.addEventListener('error', onError);
+            xhr.addEventListener('timeout', onTimeout);
+            xhr.addEventListener('abort', onAbort);
+            xhr.addEventListener('loadend', function(){onLoadend(xhr)});
+            xhr.addEventListener('loadstart', function(){onLoadstart(xhr)});
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    var status = xhr.status;
                     /* istanbul ignore else */
-                    if (!_.FormData || !(body instanceof _.FormData)) {
-                        headers = override(headers, {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'});
+                    if (status === 0 || (status >= 200 && status < 400)) {
+                        !called && onCompleted(xhr);
+                        called = true;
                     }
-                    body = new URLSearchParams(body);
+                    // if (xhr.error){
+                    //     onError(xhr.error);
+                    //     xhr.abort();
+                    // }
                 }
-                xhr.open(method, url, true, user, password);
-                for (var field in headers) xhr.setRequestHeader(field, headers[field]);
-                xhr.send(body);
+            };
+            if(contentType === 'application/xml') {
+                xhr.overrideMimeType("text/xml");
             }
+            if (body) {
+                headers = override(headers, {'X-Requested-With': 'XMLHttpRequest'});
+                /* istanbul ignore else */
+                if (!_.FormData || !(body instanceof _.FormData)) {
+                    headers = override(headers, {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'});
+                }
+                body = new URLSearchParams(body);
+            }
+            xhr.open(method, url, true, user, password);
+            for (var field in headers) xhr.setRequestHeader(field, headers[field]);
+            xhr.send(body);
+            
+            
             return xhr;
         };
     ctx.getJson = function(prs){
