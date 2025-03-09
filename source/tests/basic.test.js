@@ -57,7 +57,7 @@ describe('basic requests', () => {
                 surname: 'ghedina'
             },
             onCompleted: function(r){
-                const res = r.responseText,
+                const res = r.response,
                     resJ = JSON.parse(res);
                 expect(res).not.toBeNull();
                 expect(resJ.who).toBe('federico@ghedina');
@@ -72,7 +72,7 @@ describe('basic requests', () => {
                 id: 31,
             },
             onCompleted: function(r){
-                var res = r.responseText,
+                var res = r.response,
                     resJ = JSON.parse(res);
                 expect(resJ.response).toBe('deleted 31')
                 done();
@@ -88,7 +88,7 @@ describe('basic requests', () => {
                 surname: 'ghedina'
             },
             onCompleted: function(r){
-                var res = r.responseText,
+                var res = r.response,
                     resJ = JSON.parse(res);
                 expect(resJ.who).toBe("federico@ghedina");
                 done()
