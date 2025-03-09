@@ -6,7 +6,7 @@ _______   ____ ___  __|  |_________
  |  | \/\  ___/ >    <|   Y  \  | \/
  |__|    \___  >__/\_ \___|  /__|   
              \/      \/    \/
-                                v. 0.0.9
+                                v. 0.0.10
 </pre>
 
 [![Coverage Status](https://coveralls.io/repos/github/fedeghe/rexhr/badge.svg?branch=master)](https://coveralls.io/github/fedeghe/rexhr?branch=master)
