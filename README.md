@@ -6,32 +6,37 @@ _______   ____ ___  __|  |_________
  |  | \/\  ___/ >    <|   Y  \  | \/
  |__|    \___  >__/\_ \___|  /__|   
              \/      \/    \/
-                                v. 0.0.8
+                                v. 0.0.9
 </pre>
 
 [![Coverage Status](https://coveralls.io/repos/github/fedeghe/rexhr/badge.svg?branch=master)](https://coveralls.io/github/fedeghe/rexhr?branch=master)
 
-Install it
-``` sh
-> yarn add rexhr
-```
+### wtf?  
+Another client ajax library
 
-### first thing first
-All tests are meant to run agains a local small server which respond back usual replies needed in the tests. Indeed tests are based on some hadrcoded values returned by that local server, which needs to be started before running the tests:  
+### first things first
+All tests are meant to run agains a local small server which respond back usual replies needed in the tests. Indeed tests are based on some hadrcoded values returned by that local server, which needs to be started before running the tests.  
+NPM package clearly does not contain all needed for testing since it must bring only we very minimal code, but on the [gihtub repository](https://fedeghe@github.com/fedeghe/rexhr.git) there's everything:  
+
 ``` sh
-// I assume you are in the folder where rexhr was installed
-> cd node_modules/rexhr
-> yarn start 
+> git clone https://fedeghe@github.com/fedeghe/rexhr.git
+> cd rexhr
+> yarn 
+> yarn start // start the local server for tests
 ```
-let it run and start the tests: 
+let it run and run the tests: 
 ``` sh
 > yarn test
 ``` 
 then You can shut down both.
 
-# use it
+# add it and use it
 
-run `yarn build` to be sure to get the minified version into `dist/index.js`
+run `yarn add rexhr` in the project where you want to try it, then import it:
+``` js
+var rexhr = require('rexhr');
+```
+
 
 <details>
 <summary>generic request signature</summary>
