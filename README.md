@@ -102,8 +102,8 @@ rexhr.get({
 rexhr.head({
 	url: 'http://sampleurl/infoSomething',
 	body: {
-		name: 'Henry',
-		surname: 'Poincaré'
+		name: 'Donald',
+		surname: 'Knuth'
 	}
 	onCompleted: function(r){
 		console.log((r.getResponseHeader("Content-Length"));
@@ -119,8 +119,7 @@ rexhr.head({
 rexhr.patch({
 	url: 'http://sampleurl/patchSomething',
 	body: {
-		name: 'Henry',
-		surname: 'Poincaré'
+		id: 12345
 	}
 	onCompleted: function(r){
 		console.log((r.response);
@@ -136,8 +135,8 @@ rexhr.patch({
 rexhr.post({
 	url: 'http://sampleurl/postSomething',
 	body: {
-		name: 'Henry',
-		surname: 'Poincaré'
+		m: 'Bob',
+		f: 'Alice'
 	}
 	onCompleted: function(r){
 		console.log((r.response);
@@ -153,8 +152,7 @@ rexhr.post({
 rexhr.put({
 	url: 'http://sampleurl/putSomething',
 	body: {
-		name: 'Henry',
-		surname: 'Poincaré'
+		num: 1
 	}
 	onCompleted: function(r){
 		console.log((r.response);
