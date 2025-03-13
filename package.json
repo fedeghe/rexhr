@@ -1,6 +1,6 @@
 {
   "name": "rexhr",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "main": "dist/index.js",
   "author": "Federico Ghedina <fedeghe@gmail.com>",
   "description": "another client ajax library",
