@@ -15,8 +15,8 @@ _______   ____ ___  __|  |_________
 Another client ajax library
 
 ### first things first
-All tests must run against a local small server. Tests are indeed based on some hadrcoded values returned by that local server, which needs to be started before running the tests.  
-NPM package clearly does not contain all needed for testing since it must bring only the very minimal code, but on the [gihtub repository](https://fedeghe@github.com/fedeghe/rexhr.git) there's everything:  
+All tests must run against a local small server, which needs to be started before running the tests.  
+NPM package clearly brings only the very minimal code (no tests code and no test server), but on the [github repository](https://fedeghe@github.com/fedeghe/rexhr.git) there's everything:  
 
 ``` sh
 > git clone https://fedeghe@github.com/fedeghe/rexhr.git
