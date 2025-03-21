@@ -103,6 +103,6 @@ var rexhr = {};
             }
         );
 
-})(rexhr, window);
+})(rexhr, global || window);
 
 (typeof exports === 'object') && (module.exports = rexhr);
