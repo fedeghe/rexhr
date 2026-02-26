@@ -28,6 +28,6 @@
     "build": "malta source/build.json",
     "test": "jest --config ./jest.config.js --verbose $PWD/source/tests",
     "watch": "jest --config ./jest.config.js --watch $PWD/source/tests --coverageReporters='text-summary'",
-    "cover": "jest  --coverage -- ./jest.config.js $PWD/source/tests"
+    "cover": "jest --config ./jest.config.js --coverage $PWD/source/tests"
   }
 }
