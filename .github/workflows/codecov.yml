@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 0
 
       - name: Set up Node
         uses: actions/setup-node@v4
@@ -61,16 +61,23 @@ jobs:
           wc -l coverage/lcov.info
           head -n 20 coverage/lcov.info
 
+      - name: Debug git metadata
+        run: |
+          git status --short
+          git branch --show-current || true
+          git rev-parse HEAD
+          git log -1 --pretty=fuller
+
       - name: Upload results to Codecov
         if: always() && hashFiles('coverage/lcov.info') != ''
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@v4
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         with:
           files: ./coverage/lcov.info
           disable_search: true
           fail_ci_if_error: true
           verbose: true
-          token: ${{ secrets.CODECOV_TOKEN }}
-          slug: fedeghe/rexhr
           flags: unittests
           name: rexhr-coverage
 
