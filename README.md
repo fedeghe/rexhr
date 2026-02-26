@@ -6,7 +6,7 @@ _______   ____ ___  __|  |_________
  |  | \/\  ___/ >    <|   Y  \  | \/
  |__|    \___  >__/\_ \___|  /__|   
              \/      \/    \/
-                                v. 0.0.13
+                                v. maltaV('PACKAGE.version')
 </pre>
 
 [![Coverage Status](https://coveralls.io/repos/github/fedeghe/rexhr/badge.svg?branch=master)](https://coveralls.io/github/fedeghe/rexhr?branch=master)
@@ -198,5 +198,5 @@ rexhr.getJson({
 <br/>
 
 ---
-2025 - rexhr
+2026 - maltaV('PACKAGE.name')
 

@@ -7,7 +7,7 @@ describe('timeout requests', () => {
             timeout: 1,
             onTimeout: function () {
                 done();
-            },
+            }
         });
     });
 });
