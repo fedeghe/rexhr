@@ -7,6 +7,9 @@ jobs:
   test:
     name: Run tests and collect coverage
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -45,6 +48,13 @@ jobs:
       - name: Run tests
         run: npm run cover
 
+      - name: Verify coverage files
+        run: |
+          ls -la coverage
+          test -f coverage/lcov.info
+          wc -l coverage/lcov.info
+          head -n 20 coverage/lcov.info
+
       - name: Upload results to Codecov
         uses: codecov/codecov-action@v5
         with:
@@ -52,7 +62,9 @@ jobs:
           disable_search: true
           fail_ci_if_error: true
           verbose: true
-          token: ${{ secrets.CODECOV_TOKEN }}
+          use_oidc: true
+          flags: unittests
+          name: rexhr-coverage
 
       - name: Stop test server
         if: always()
