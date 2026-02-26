@@ -1,6 +1,6 @@
 name: Run tests and upload coverage
 
-on: 
+on:
   push
 
 jobs:
@@ -15,18 +15,42 @@ jobs:
 
       - name: Set up Node
         uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
       - name: Install dependencies
         run: npm install
-      
+
       - name: Build
         run: npm run build
 
-      - name: Run test srv
-        run: npm start
+      - name: Start test server
+        run: |
+          nohup npm start > /tmp/rexhr-test-server.log 2>&1 &
+          echo $! > /tmp/rexhr-test-server.pid
+
+      - name: Wait for server
+        run: |
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:3001/save > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "Server did not become ready in time"
+          echo "---- server log ----"
+          cat /tmp/rexhr-test-server.log
+          exit 1
 
       - name: Run tests
         run: npm run cover
+
+      - name: Stop test server
+        if: always()
+        run: |
+          if [ -f /tmp/rexhr-test-server.pid ]; then
+            kill "$(cat /tmp/rexhr-test-server.pid)" || true
+          fi
 
       - name: Upload results to Codecov
         uses: codecov/codecov-action@v5
