@@ -78,8 +78,6 @@ jobs:
           disable_search: true
           fail_ci_if_error: true
           verbose: true
-          flags: unittests
-          name: rexhr-coverage
 
       - name: Stop test server
         if: always()
