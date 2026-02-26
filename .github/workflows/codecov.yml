@@ -7,9 +7,6 @@ jobs:
   test:
     name: Run tests and collect coverage
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -48,6 +45,15 @@ jobs:
       - name: Run tests
         run: npm run cover
 
+      - name: Check Codecov token
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        run: |
+          if [ -z "$CODECOV_TOKEN" ]; then
+            echo "Missing CODECOV_TOKEN secret"
+            exit 1
+          fi
+
       - name: Verify coverage files
         run: |
           ls -la coverage
@@ -56,13 +62,15 @@ jobs:
           head -n 20 coverage/lcov.info
 
       - name: Upload results to Codecov
+        if: always() && hashFiles('coverage/lcov.info') != ''
         uses: codecov/codecov-action@v5
         with:
           files: ./coverage/lcov.info
           disable_search: true
           fail_ci_if_error: true
           verbose: true
-          use_oidc: true
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: fedeghe/rexhr
           flags: unittests
           name: rexhr-coverage
 
