@@ -45,14 +45,14 @@ jobs:
       - name: Run tests
         run: npm run cover
 
+      - name: Upload results to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
       - name: Stop test server
         if: always()
         run: |
           if [ -f /tmp/rexhr-test-server.pid ]; then
             kill "$(cat /tmp/rexhr-test-server.pid)" || true
           fi
-
-      - name: Upload results to Codecov
-        uses: codecov/codecov-action@v5
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
