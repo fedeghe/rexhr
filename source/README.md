@@ -9,7 +9,7 @@ _______   ____ ___  __|  |_________
                                 v. maltaV('PACKAGE.version')
 </pre>
 
-[![Coverage Status](https://coveralls.io/repos/github/fedeghe/rexhr/badge.svg?branch=master)](https://coveralls.io/github/fedeghe/rexhr?branch=master)
+[![codecov](https://codecov.io/gh/fedeghe/rexhr/graph/badge.svg?token=46KMOHOQXC)](https://codecov.io/gh/fedeghe/rexhr)
 
 ### wtf?  
 Another client ajax library
